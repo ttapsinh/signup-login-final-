@@ -47,7 +47,7 @@ if (isset($_POST["uname"]) && isset($_POST["password"])
 
         $pass = md5($pass);
 
-	    $sql = "SELECT * FROM 'users' WHERE user_name= $uname ";
+	    $sql = "SELECT * FROM users WHERE user_name= '$uname' ";
 		$result = mysqli_query($conn, $sql);
 		if (mysqli_num_rows($result) > 0) {
 			header("Location: signup.php?error= Tên đăng nhập đã tồn tại! &$user_data");
